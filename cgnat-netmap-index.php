@@ -22,15 +22,15 @@
 	<form method="POST" name="formulario">
 		<h3>Gerador de CGNAT para RouterOS com netmap</h3>
 		<div class="form-group">
-			<label for="c">IP inicial</label>
+			<label for="c"><b>IP inicial</b></label>
 			<input type="text" class="form-control" id="c" name="c" placeholder="100.64.0.0">
 		</div>
 		<div class="form-group">
-			<label for="s">Bloco Público</label>
+			<label for="s"><b>Bloco Público</b></label>
 			<input type="text" class="form-control" id="s" name="s" placeholder="200.200.200.0/26">
 		</div>
 		<div class="form-group">
-			<label for="t">1 para?</label>
+			<label for="t"><b>1 para?</b></label>
 			<select class="custom-select" name="t" id="t">
 			<option value="8">8 (~8000 portas por IP)</option>
 			<option value="16">16 (~4000 portas por IP)</option>
@@ -40,18 +40,32 @@
 			</select>
 		</div>
 		<div class="form-group">
-			<label for="int">Interface Uplink</label>
+			<label for="int"><b>Interface Uplink</b></label>
 			<select class="custom-select" name="int" id="int" onChange="dis_able()">
 				<option value="null">Não Informar</option>
 				<option value="nome">Nome da Interface</option>
 				<option value="list">Interface List</option>				
 			</select>
-		</div>		
+		</div>	
 		<div class="form-group">
-			<label for="nome">Nome da interface</label>
+			<label for="nome"><b>Nome da interface</b></label>
 			<input type="text" class="form-control" id="nome" name="nome" placeholder="sfp1 / uplink-cgnat" disabled="" >
 			<small id="obs" class="form-text text-muted">Nome da sua interface uplink ou da interface-list.</small>
 		</div>
+		  <div class="form-group">		    
+		    <label class="form-check-label" for="protocol"><b>Protocolo: </b></label>
+		    <div class="form-check-inline">
+			  <label class="form-check-label">
+			    <input type="radio" class="form-check-input" checked="" name="protocol" value="none">TCP/UDP
+			  </label>
+			</div>
+			<div class="form-check-inline">
+			  <label class="form-check-label">
+			    <input type="radio" class="form-check-input" name="protocol" value="tcpudp">TCP
+			  </label>
+			</div>
+		    <small id="obs" class="form-text text-muted">Algumas pessoas alegam ter algum problemas fazendo para UDP.</small>
+		  </div>
 		<div class="form-group">
 			<button type="submit" class="btn btn-primary">Gerar</button>
 		</div>
@@ -122,7 +136,11 @@
 			for($i=0;$i<$CGNAT_RULES;++$i){
 				
 				$saida_regras[] = "add action=netmap chain=CGNAT-{$x}$interface protocol=tcp src-address=".long2ip($CGNAT_IP)."/{$rules[1]} to-addresses={$CGNAT_START} to-ports={$ports_start}-{$ports_end}";
-				$saida_regras[] = "add action=netmap chain=CGNAT-{$x}$interface protocol=udp src-address=".long2ip($CGNAT_IP)."/{$rules[1]} to-addresses={$CGNAT_START} to-ports={$ports_start}-{$ports_end}";
+				
+				if ($_POST['protocol'] == 'none'){
+					$saida_regras[] = "add action=netmap chain=CGNAT-{$x}$interface protocol=udp src-address=".long2ip($CGNAT_IP)."/{$rules[1]} to-addresses={$CGNAT_START} to-ports={$ports_start}-{$ports_end}";
+				}
+
 				$saida_regras[] = "add action=netmap chain=CGNAT-{$x}$interface src-address=".long2ip($CGNAT_IP)."/{$rules[1]} to-addresses={$CGNAT_START}";
 				$CGNAT_IP += $subnet_rev[$rules[1]];
 
