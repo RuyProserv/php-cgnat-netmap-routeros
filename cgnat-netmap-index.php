@@ -33,7 +33,7 @@
 		</div>
 		<script type="text/javascript">
 			function help(){
-				alert("Em um /37 você tem 32 IPs públicos, cada um desses será necessário adicionar em seu roteador\n \n Ex: \n /ip address \n  add address=200.200.200.0/32 interface=xxx \n add address=200.200.200.1/32 interface=xxx \n add address=200.200.200.3/32 interface=xxx \n até \n add address=200.200.200.31/32 interface=xxx ");
+				alert("Em um /27 você tem 32 IPs públicos, cada um desses será necessário adicionar em seu roteador\n \n Ex: \n /ip address \n  add address=200.200.200.0/32 interface=xxx \n add address=200.200.200.1/32 interface=xxx \n add address=200.200.200.3/32 interface=xxx \n até \n add address=200.200.200.31/32 interface=xxx ");
 			}
 		</script>
 
