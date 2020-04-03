@@ -178,5 +178,10 @@
 			echo "<pre>";
 		}
 	?>
+	<div align="center">
+		<div id="fb-root"></div>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0&appId=630735496970056&autoLogAppEvents=1"></script>
+		<div class="fb-like" data-href="https://www.facebook.com/root.remontti/" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true"></div>
+	</div>
 </body>
 </html>
