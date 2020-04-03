@@ -29,8 +29,14 @@
 		<div class="form-group">
 			<label for="s"><b>Bloco Público</b></label>
 			<input type="text" class="form-control" id="s" name="s" placeholder="200.200.200.0/26">
-			<small id="obs" class="form-text text-muted">Você precisa adicionar cada IP/32 deste bloco em seu router</small>
+			<small id="obs" class="form-text text-muted">Deste bloco é necessário adicionar cada IP/32 em seu router. <a href="javascript:help()">(?)</a></small>
 		</div>
+		<script type="text/javascript">
+			function help(){
+				alert("Em um /37 você tem 32 IPs públicos, cada um desses será necessário adicionar em seu roteador\n \n Ex: \n /ip address \n  add address=200.200.200.0/32 interface=xxx \n add address=200.200.200.1/32 interface=xxx \n add address=200.200.200.3/32 interface=xxx \n até \n add address=200.200.200.31/32 interface=xxx ");
+			}
+		</script>
+
 		<div class="form-group">
 			<label for="t"><b>1 para?</b></label>
 			<select class="custom-select" name="t" id="t">
@@ -54,24 +60,26 @@
 			<input type="text" class="form-control" id="nome" name="nome" placeholder="sfp1 / uplink-cgnat" disabled="" >
 			<small id="obs" class="form-text text-muted">Nome da sua interface uplink ou da interface-list.</small>
 		</div>
+		<hr>
 		  <div class="form-group">		    
 		    <label class="form-check-label" for="protocol"><b>Protocolo: </b></label>
 		    <div class="form-check-inline">
 			  <label class="form-check-label">
-			    <input type="radio" class="form-check-input" checked="" name="protocol" value="none">TCP/UDP
+			    <input type="radio" class="form-check-input" checked="" name="protocol" value="none">TCP/UDP <small>(Recomendado)</small>
 			  </label>
-			</div>
+			</div>			
 			<div class="form-check-inline">
 			  <label class="form-check-label">
-			    <input type="radio" class="form-check-input" name="protocol" value="tcpudp">TCP
+			    <input type="radio" class="form-check-input" name="protocol" value="tcpudp">Apenas TCP
 			  </label>
 			</div>
-		    <small id="obs" class="form-text text-muted">Algumas pessoas alegam ter algum problemas fazendo para UDP.</small>
+			<small id="obs" class="form-text text-muted">Algumas pessoas já alegaram ter algum problema fazendo para UDP.</small>
 		  </div>
+		<hr>
 		<div class="form-group">
-			<button type="submit" class="btn btn-primary">Gerar</button>
+			<button type="submit" class="btn btn-primary">Gerar Scritp</button>
 		</div>
-	</form>
+	</form>	
 	<div align="center">
 		<a href="https://github.com/remontti/php-cgnat-netmap-routeros">Código Fonte</a> | <a href="https://blog.remontti.com.br/doar">Doar</a>
 	</div>
