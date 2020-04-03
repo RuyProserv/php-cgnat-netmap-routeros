@@ -56,6 +56,9 @@
 			<button type="submit" class="btn btn-primary">Gerar</button>
 		</div>
 	</form>
+	<div align="center">
+		<a href="https://github.com/remontti/php-cgnat-netmap-routeros">Código Fonte</a> | <a href="https://blog.remontti.com.br/doar">Doar</a>
+	</div>
 </div>
 	<?php
 		} 
