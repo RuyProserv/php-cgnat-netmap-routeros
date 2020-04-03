@@ -29,6 +29,7 @@
 		<div class="form-group">
 			<label for="s"><b>Bloco Público</b></label>
 			<input type="text" class="form-control" id="s" name="s" placeholder="200.200.200.0/26">
+			<small id="obs" class="form-text text-muted">Você precisa adicionar cada IP/32 deste bloco em seu router</small>
 		</div>
 		<div class="form-group">
 			<label for="t"><b>1 para?</b></label>
