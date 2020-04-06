@@ -84,7 +84,7 @@
 			</div>
 			<hr>
 			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Gerar Scritp</button>
+				<button type="submit" class="btn btn-primary">Gerar Script</button>
 			</div>
 		</form>	
 	</div>
