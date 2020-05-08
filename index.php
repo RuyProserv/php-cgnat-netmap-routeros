@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>Gerador de CGNAT para RouterOS com netmap</title>
+        <title>Gerador de CGNAT - By Rudimar Remontti</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script language="javascript">
@@ -26,7 +26,9 @@
 
         <div style="padding: 30px;">
                 <form method="POST" name="formulario">
-                        <h3><b>Gerador de CGNAT para RouterOS com netmap</b></h3>
+                        <center>
+                                <h2 class="text-info"><b>:: Gerador de CGNAT para RouterOS com netmap ::</b></h3>
+                        </center>
                         <div class="form-row">
                                 <div class="form-group col-md-6">
                                         <label for="c"><b>IP inicial inválido</b></label>
@@ -57,9 +59,9 @@
                                         <small id="obs" class="form-text text-muted">Bloco público será quebrado em /32 e adicionar a uma interface.</small>
                                 </div>
                                 <div class="form-group col-md-4">
-                                        <label for="x"><b>Sequencial da Chain</b></label>
+                                        <label for="x"><b>Sequencial do nome da Chain</b></label>
                                         <input type="text" class="form-control" id="x" name="x" placeholder="0" value='0'>
-                                        <small id="obs" class="form-text text-muted">CGNAT-0, CGNAT-1, ...</small>
+                                        <small id="obs" class="form-text text-muted">Nome da chain: CGNAT-0, CGNAT-1, CGNAT-2...</small>
                                 </div>
                         </div>
                         <div class="form-row">
@@ -233,6 +235,8 @@
                 <div id="fb-root"></div>
                 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v6.0&appId=630735496970056&autoLogAppEvents=1"></script>
                 <div class="fb-like" data-href="https://www.facebook.com/root.remontti/" data-width="" data-layout="button" data-action="like" data-size="large" data-share="true"></div>
+                <br /><br />
+                <a href="http://www.remontti.com.br"><img src="logo.png"></a>
         </div>
 </body>
 </html>
