@@ -39,8 +39,9 @@ if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on")
                         </center>
                         <div class="form-row">
                                 <div class="form-group col-md-6">
-                                        <label for="c"><b>IP inicial inválido</b></label>
-                                        <input type="text" class="form-control" id="c" name="c" placeholder="ex: 100.64.0.0">
+                                        <label for="c"><b>IP Privado inicial</b> <small><i>(Recomendado 100.64.0.0)</i></small></label>
+                                        <input type="text" class="form-control" id="c" name="c" placehoalder="ex: 100.64.0.0" value="100.64.0.0">
+                                        <small id="obs" class="form-text text-muted">Comece sempre pelo final .0, ou por um dos <b>networks</b> da máscara usada no IP Público.</small>
                                 </div>
                                 <div class="form-group col-md-6">
                                         <label for="s"><b>Bloco Público</b></label>
@@ -49,7 +50,7 @@ if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on")
                         </div>
                         <div class="form-row">
                                 <div class="form-group col-md-4">
-                                        <label for="t"><b>1 público para quantos inválidos?</b></label>
+                                        <label for="t"><b>1 Público para quantos Privados?</b></label>
                                         <select class="custom-select" name="t" id="t">
                                         <option value="2">2 (~32000 portas por IP Público)</option>
                                         <option value="4">4 (~16000 portas por IP Público)</option>
@@ -116,11 +117,11 @@ if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on")
                         $get_ip_mask = explode("/",$_POST['s']);
 
                         if(!filter_var($_POST['c'], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
-                          echo "IP inicial inválido.". $_POST['c']; die;
+                          echo "IP inicial Privado.". $_POST['c']; die;
                         }
 
                         if(!filter_var($get_ip_mask[0], FILTER_VALIDATE_IP, FILTER_FLAG_IPV4)) {
-                          echo "Bloco público inválido.".$get_ip_mask[0]; die;
+                          echo "Bloco público Privado.".$get_ip_mask[0]; die;
                         }
                         if($get_ip_mask[1] == '31') { 
                                 echo "Máscara não suportada."; die;
