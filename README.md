@@ -1,7 +1,7 @@
 # CGNAT utilizando netmap (RouterOS)
 
 ## Código fonte do gerador:
-## https://meuip.remontti.com.br/cgnat/
+## https://cgnat.remontti.com.br/
 
 ## DOAR
 Se quiser fazer uma doação para o cafézinho ficarei muito feliz pelo seu reconhecimento!
