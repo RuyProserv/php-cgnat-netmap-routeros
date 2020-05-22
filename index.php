@@ -46,6 +46,7 @@ if(!isset($_SERVER["HTTPS"]) || $_SERVER["HTTPS"] != "on")
                                 <div class="form-group col-md-6">
                                         <label for="s"><b>Bloco Público</b></label>
                                         <input type="text" class="form-control" id="s" name="s" placeholder="ex: 200.200.200.0/26">
+                                        <small id="obs" class="form-text text-muted">Network<b>/</b>Máscara</small>
                                 </div>
                         </div>
                         <div class="form-row">
